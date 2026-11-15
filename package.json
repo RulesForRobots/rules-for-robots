@@ -1,0 +1,13 @@
+{
+  "name": "rules-for-robots",
+  "private": true,
+  "type": "module",
+  "description": "The front door of Rules for Robots: the charter, getting started, and the rfr plugin marketplace.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "verify": "node --test .github/scripts/test/marketplace.test.mjs && node .github/scripts/marketplace.mjs"
+  }
+}
