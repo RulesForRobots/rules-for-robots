@@ -1,0 +1,10 @@
+{
+  "name": "rfr",
+  "owner": {
+    "name": "Lifelike & Believable Animation Design"
+  },
+  "metadata": {
+    "description": "Rules for Robots: plugins that let one person direct agents through a whole project by approving decisions, never commands."
+  },
+  "plugins": []
+}

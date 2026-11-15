@@ -1,0 +1,25 @@
+# Checks the rfr marketplace on every pull request and push, for the channel of the branch:
+# on main (stable) every plugin must be pinned to a release; on latest, at its repository's main.
+# "verify" is the check for branch protection to require.
+
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main, latest]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      # Validation needs the Claude Code CLI; no API key is used.
+      - run: npm install --global @anthropic-ai/claude-code@^2.1.288
+      - run: npm run verify
